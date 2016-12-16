@@ -266,7 +266,33 @@ h4, .uk-h4{
 }
 .uk-exemples_block-slider-tachometer{
     top: 0px;
-    left: 0;
+    left: 20px;
+    opacity: 0;
+}
+.uk-tachometer-visible {
+    opacity: 0;
+    -webkit-animation: fadein 2s;
+    -webkit-animation-delay: 0.8s;
+    -webkit-animation-fill-mode: forwards;
+    animation: fadein 2s;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 .uk-exemples_block-slider-tachometer-marker{
     background: url(../images/tachometer-marker.png);
@@ -274,15 +300,598 @@ h4, .uk-h4{
     background-position: left bottom;
     background-size: auto;
     bottom: 40px;
-    left: 142px;
-    width: 421px;
-    height: 415px;
+    left: 123px;
+    width: 462px;
+    height: 395px;
+}
+.uk-marker-rotate{
+    -webkit-animation-duration: 4s;
+    -webkit-animation-delay: 1.2s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease-in-out, ease-out;
+    animation-duration: 4s;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out, ease-out;
+}
+.uk-marker-rotate-60{
+    -webkit-animation-name: rotate-60;
+    animation-name: rotate-60;
+}
+.uk-marker-rotate-70{
+    -webkit-animation-name: rotate-70;
+    animation-name: rotate-70;
+}
+.uk-marker-rotate-80{
+    -webkit-animation-name: rotate-80;
+    animation-name: rotate-80;
+}
+.uk-marker-rotate-90{
+    -webkit-animation-name: rotate-90;
+    animation-name: rotate-90;
+}
+.uk-marker-rotate-100{
+    -webkit-animation-name: rotate-100;
+    animation-name: rotate-100;
+}
+.uk-marker-rotate-110{
+    -webkit-animation-name: rotate-110;
+    animation-name: rotate-110;
+}
+.uk-marker-rotate-120{
+    -webkit-animation-name: rotate-120;
+    animation-name: rotate-120;
+}
+.uk-marker-rotate-130{
+    -webkit-animation-name: rotate-130;
+    animation-name: rotate-130;
+}
+.uk-marker-rotate-140{
+    -webkit-animation-name: rotate-140;
+    animation-name: rotate-140;
+}
+.uk-marker-rotate-150{
+    -webkit-animation-name: rotate-150;
+    animation-name: rotate-150;
+}
+.uk-marker-rotate-160{
+    -webkit-animation-name: rotate-160;
+    animation-name: rotate-160;
+}
+.uk-marker-rotate-170{
+    -webkit-animation-name: rotate-170;
+    animation-name: rotate-170;
+}
+.uk-marker-rotate-180{
+    -webkit-animation-name: rotate-180;
+    animation-name: rotate-180;
+}
+.uk-marker-rotate-190{
+    -webkit-animation-name: rotate-190;
+    animation-name: rotate-190;
+}
+.uk-marker-rotate-200{
+    -webkit-animation-name: rotate-200;
+    animation-name: rotate-200;
+}
+.uk-marker-rotate-210{
+    -webkit-animation-name: rotate-210;
+    animation-name: rotate-210;
+}
+.uk-marker-rotate-220{
+    -webkit-animation-name: rotate-220;
+    animation-name: rotate-220;
+}
+/*60*/
+@-webkit-keyframes rotate-60 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(15deg);
+    }
+    70%{
+        transform: rotate(10deg);
+    }
+    to {
+        transform: rotate(45deg);
+    }
+}
+@keyframes rotate-60 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(15deg);
+    }
+    70%{
+        transform: rotate(10deg);
+    }
+    to {
+        transform: rotate(45deg);
+    }
+}
+/*70*/
+@-webkit-keyframes rotate-70 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(25deg);
+    }
+    70%{
+        transform: rotate(15deg);
+    }
+    to {
+        transform: rotate(60deg);
+    }
+}
+@keyframes rotate-70 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(25deg);
+    }
+    70%{
+        transform: rotate(15deg);
+    }
+    to {
+        transform: rotate(60deg);
+    }
+}
+/*80*/
+@-webkit-keyframes rotate-80 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(25deg);
+    }
+    70%{
+        transform: rotate(15deg);
+    }
+    to {
+        transform: rotate(70deg);
+    }
+}
+@keyframes rotate-80 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(30deg);
+    }
+    70%{
+        transform: rotate(20deg);
+    }
+    to {
+        transform: rotate(70deg);
+    }
+}
+/*90*/
+@-webkit-keyframes rotate-90 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(40deg);
+    }
+    70%{
+        transform: rotate(20deg);
+    }
+    to {
+        transform: rotate(85deg);
+    }
+}
+@keyframes rotate-90 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(40deg);
+    }
+    70%{
+        transform: rotate(20deg);
+    }
+    to {
+        transform: rotate(85deg);
+    }
+}
+/*100%*/
+@-webkit-keyframes rotate-100 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(45deg);
+    }
+    70%{
+        transform: rotate(25deg);
+    }
+    to {
+        transform: rotate(95deg);
+    }
+}
+@keyframes rotate-100 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(45deg);
+    }
+    70%{
+        transform: rotate(25deg);
+    }
+    to {
+        transform: rotate(95deg);
+    }
+}
+/*110%*/
+@-webkit-keyframes rotate-110 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(50deg);
+    }
+    70%{
+        transform: rotate(25deg);
+    }
+    to {
+        transform: rotate(108deg);
+    }
+}
+@keyframes rotate-110 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(50deg);
+    }
+    70%{
+        transform: rotate(25deg);
+    }
+    to {
+        transform: rotate(108deg);
+    }
+}
+/*120%*/
+@-webkit-keyframes rotate-120 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(55deg);
+    }
+    70%{
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(122deg);
+    }
+}
+@keyframes rotate-120 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(55deg);
+    }
+    70%{
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(122deg);
+    }
+}
+/*130%*/
+@-webkit-keyframes rotate-130 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(60deg);
+    }
+    70%{
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(135deg);
+    }
+}
+@keyframes rotate-130 {
+    from {
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(60deg);
+    }
+    60%{
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(135deg);
+    }
+}
+/*140%*/
+@-webkit-keyframes rotate-140 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(60deg);
+    }
+    70%{
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(150deg);
+    }
+}
+@keyframes rotate-140 {
+    from {
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(60deg);
+    }
+    60%{
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(150deg);
+    }
+}
+/*150%*/
+@-webkit-keyframes rotate-150 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(60deg);
+    }
+    70%{
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(160deg);
+    }
+}
+@keyframes rotate-150 {
+    from {
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(60deg);
+    }
+    60%{
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(160deg);
+    }
+}
+/*160%*/
+@-webkit-keyframes rotate-160 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(60deg);
+    }
+    70%{
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(176deg);
+    }
+}
+@keyframes rotate-160 {
+    from {
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(70deg);
+    }
+    60%{
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(176deg);
+    }
+}
+/*170%*/
+@-webkit-keyframes rotate-170 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(70deg);
+    }
+    70%{
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(182deg);
+    }
+}
+@keyframes rotate-170 {
+    from {
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(80deg);
+    }
+    60%{
+        transform: rotate(40deg);
+    }
+    to {
+        transform: rotate(182deg);
+    }
+}
+/*180%*/
+@-webkit-keyframes rotate-180 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(80deg);
+    }
+    70%{
+        transform: rotate(40deg);
+    }
+    to {
+        transform: rotate(198deg);
+    }
+}
+@keyframes rotate-180 {
+    from {
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(90deg);
+    }
+    60%{
+        transform: rotate(50deg);
+    }
+    to {
+        transform: rotate(198deg);
+    }
+}
+/*190%*/
+@-webkit-keyframes rotate-190 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(90deg);
+    }
+    70%{
+        transform: rotate(50deg);
+    }
+    to {
+        transform: rotate(210deg);
+    }
+}
+@keyframes rotate-190 {
+    from {
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(90deg);
+    }
+    60%{
+        transform: rotate(50deg);
+    }
+    to {
+        transform: rotate(210deg);
+    }
+}
+/*200%*/
+@-webkit-keyframes rotate-200 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(90deg);
+    }
+    70%{
+        transform: rotate(50deg);
+    }
+    to {
+        transform: rotate(225deg);
+    }
+}
+@keyframes rotate-200 {
+    from {
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(90deg);
+    }
+    60%{
+        transform: rotate(50deg);
+    }
+    to {
+        transform: rotate(225deg);
+    }
+}
+/*210%*/
+@-webkit-keyframes rotate-210 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(90deg);
+    }
+    70%{
+        transform: rotate(50deg);
+    }
+    to {
+        transform: rotate(235deg);
+    }
+}
+@keyframes rotate-210 {
+    from {
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(90deg);
+    }
+    60%{
+        transform: rotate(50deg);
+    }
+    to {
+        transform: rotate(235deg);
+    }
+}
+/*220%*/
+@-webkit-keyframes rotate-220 {
+    from {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(90deg);
+    }
+    70%{
+        transform: rotate(50deg);
+    }
+    to {
+        transform: rotate(250deg);
+    }
+}
+@keyframes rotate-220 {
+    from {
+        transform: rotate(0deg);
+    }
+    30%{
+        transform: rotate(90deg);
+    }
+    65%{
+        transform: rotate(50deg);
+    }
+    to {
+        transform: rotate(250deg);
+    }
+}
+
+.uk-exemples_block-slider-tachometer-counter{
+    top: 275px;
+    left: 235px;
+    font-size: 130px;
+    min-width: 230px;
+    font-weight: bold;
 }
 .uk-exemples_block-slider-car{
     max-width: 60%;
     bottom: 0;
     left: 0;
     z-index: 1;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-timing-function: cubic-bezier(0.42,0,0.58,1);
+    animation-timing-function: cubic-bezier(0.42,0,0.58,1);
 }
 .uk-exemples_block-slider-content{
     border: 10px solid #fff;
@@ -396,6 +1005,9 @@ h4, .uk-h4{
    Медиа запросы / Media queries
    ===================================================================== */
 @media (min-width: 1220px){
+    .uk-slider-position{
+        min-height: 500px;
+    }
    .uk-container {
         max-width: 1250px;
         padding: 0 15px;
@@ -404,10 +1016,20 @@ h4, .uk-h4{
        bottom: 170px;
    }
 }
+@media (max-width: 1499px){
+    .uk-exemples_block-slider-tachometer{
+        top: 275px;
+        left: 135px;
+        font-size: 100px;
+        max-width: 230px;
+        font-weight: bold;
+    }
+}
 @media (max-width: 1219px){
     .uk-slide-caption {
         bottom: 105px;
     }
+    .uk-slider-position,
     .uk-slider-position .uk-slideshow > li {
         min-height: 360px;
     }
@@ -421,6 +1043,7 @@ h4, .uk-h4{
     }
 }
 @media (max-width: 479px){
+    .uk-slider-position,
     .uk-slider-position .uk-slideshow > li {
         min-height: 260px;
     }

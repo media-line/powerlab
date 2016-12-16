@@ -186,9 +186,15 @@
                 <div class="uk-exemples_block-slider-tachometer-marker uk-position-absolute">
                     
                 </div>
+                <div class="uk-exemples_block-slider-tachometer-counter uk-position-absolute uk-text-center
+                uk-text-contrast">
+                    0
+                </div>
+
             </div>
 
-            <div class="uk-exemples_block-slider-car uk-position-absolute">
+            <div class="uk-exemples_block-slider-car uk-position-absolute"
+                 data-uk-scrollspy="{cls:'uk-animation-slide-left'}">
                 <img src="/sites/all/themes/powerlab/images/car-exemple001.png" alt=""/>
 
             </div>
