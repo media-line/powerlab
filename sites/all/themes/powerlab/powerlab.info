@@ -13,7 +13,7 @@ scripts[] = js/uikit.min.js
 scripts[] = js/components/slideshow.min.js
 scripts[] = js/script.js
 
-regions[header] = Header
+regions[header_right] = Header Right
 regions[help] = Help
 regions[page_top] = Page top
 regions[page_bottom] = Page bottom

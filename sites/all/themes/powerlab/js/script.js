@@ -1,14 +1,48 @@
 jQuery(document).ready(function () {
+
+    //Видео для слайдера
+    //Включение / отключение звука
+    jQuery('.js-mute').click(function () {
+
+        var videoId = jQuery(this).closest('.js-video-container').find('video').attr('id');
+        var video = document.getElementById(videoId);
+
+        if(video.muted){
+            video.muted = false;
+            jQuery(this).removeClass('uk-muted');
+        } else{
+            video.muted = true;
+            jQuery(this).addClass('uk-muted');
+        }
+
+    });
+
+    //Play / pause videos on slideshow
+    /*var allVideosIds = [];
+    jQuery('.js-slideshow video').each(function (index) {
+        var id = jQuery(this).attr('id');
+        allVideosIds[index] = id;
+        document.getElementById(id).pause();
+    });
+
+    var currentVideoId = jQuery(this).find('.uk-active video').attr('id');
+    document.getElementById(currentVideoId).play();
+
+    jQuery('.js-slideshow').on('show.uk.slideshow', function(){
+        jQuery(this).find('video').each(function (index) {
+            var id = jQuery(this).attr('id');
+            allVideosIds[index] = id;
+            document.getElementById(id).pause();
+        });
+        var currentVideoId = jQuery(this).find('.uk-active video').attr('id');
+        document.getElementById(currentVideoId).play();
+    });*/
+
+
     //анимация блока "примеры работ" (тахометр и авто)
-    var exemplesBlock = jQuery('.uk-exemples_block');
-    var exempleCar = jQuery('.uk-exemples_block-slider-car');
-    var tachonometer = jQuery('.uk-exemples_block-slider-tachometer');
-    var tachMarker = jQuery('.uk-exemples_block-slider-tachometer-marker');
-
-
     jQuery('.uk-exemples_block-slider-car[data-uk-scrollspy]').on('inview.uk.scrollspy', function(){
+        var tachMarker = jQuery('.uk-exemples_block-slider-tachometer-marker');
 
-        //UIkit.init.uk.scrollspy(jQuery('.uk-exemples_block-slider-tachometer'), {});
         jQuery('.uk-exemples_block-slider-tachometer').addClass('uk-tachometer-visible');
 
         jQuery('.uk-exemples_block-slider-tachometer-counter').animate({ num: 80-1/* - начало */ }, {

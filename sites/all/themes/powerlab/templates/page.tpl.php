@@ -86,14 +86,11 @@
  */
 ?>
 
-<!-- DELETE THIS! -->
-<div style="background-color: green; width:100%; height: 30px;" xmlns="http://www.w3.org/1999/html"></div>
-
 <div id="page-wrapper">
 
     <header class="uk-headerbar">
         <div class="uk-container uk-container-center">
-            <div class="uk-grid">
+            <div class="uk-grid uk-grid-collapse">
                 <div class="tm-logo uk-width-2-10 uk-width-small-1-5 uk-width-medium-1-5 uk-width-large-1-5
                 uk-width-xlarge-1-5">
                     <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
@@ -102,30 +99,42 @@
                 </div>
                 <div class="uk-width-7-10 uk-hidden-small uk-width-medium-6-10 uk-width-large-7-10
                 uk-width-xlarge-7-10 uk-flex uk-flex-middle">
-                    <div class="uk-width-1-1">
-                        <ul class="uk-headerbar-menu uk-flex uk-flex-space-around uk-list uk-margin-remove uk-text-uppercase uk-text-bold">
-                            <li><a href="#">Примеры работ</a></li>
-                            <li><a href="#">О компании</a></li>
-                            <li><a href="#">Статьи</a></li>
-                            <li><a href="#">Услуги</a></li>
-                        </ul>
-                    </div>
-                </div>
+                    <?php if ($main_menu): ?>
+                        <div id="main-menu" class="uk-width-1-1">
+                            <?php print theme('links__system_main_menu', array(
+                                'links' => $main_menu,
+                                'attributes' => array(
+                                    'id' => 'test',
+                                    'class' => array('uk-headerbar-menu', 'uk-flex', 'uk-flex-space-around uk-list', 'uk-margin-remove', 'uk-text-uppercase', 'uk-text-bold'),
+                                )
+                            )); ?>
+                        </div> <!-- /#main-menu -->
+                    <?php endif; ?>
+               </div>
                 <div class="uk-width-1-10 uk-width-small-2-10 uk-width-medium-2-10 uk-width-large-1-10
                 uk-width-xlarge-1-10 uk-flex uk-flex-middle">
-                    <div class="uk-width-1-1">
-                        <ul class="uk-headerbar-langs uk-flex uk-flex-right uk-list uk-margin-remove uk-text-uppercase uk-text-bold">
-                            <li><a href="#">rus</a></li>
-                            <li><a href="#">eng</a></li>
-                        </ul>
+                    <?php if ($page['header_right']): ?>
+                        <div class="uk-width-1-1">
+                            <div class="uk-headerbar-langs uk-flex uk-flex-right uk-text-uppercase uk-text-bold">
+                                <?php print render($page['header_right']); ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
+
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
+    <?php if (!$is_front){ ?>
+        <?php print render($page['content']); ?>
+    <?php } ?>
+
+    <?php if ($is_front){ ?>
     <div class="uk-slider-position">
-        <div class="uk-position-relative" data-uk-slideshow="{autoplay: true, autoplayInterval: 6000, animation: 'random-fx', kenburns: '30s', pauseOnHover: false}">
+        <div class="js-slideshow uk-position-relative" data-uk-slideshow="{autoplay: true, autoplayInterval: 6000, animation: 'random-fx', kenburns: '30s', pauseOnHover: false}">
             <ul class="uk-slideshow">
                 <li class="uk-active">
                     <img src="/sites/all/themes/powerlab/images/slide001.jpg" alt=""/>
@@ -135,15 +144,18 @@
                         </div>
                     </div>
                 </li>
-                <li class="uk-active">
-                    <img src="/sites/all/themes/powerlab/images/slide002.jpg" alt=""/>
-                    <div class="uk-slide-caption uk-position-absolute">
-                        <div class="uk-container uk-container-center uk-text-center">
-                            <a class="uk-button" href="#">Узнать подробнее</a>
-                        </div>
+                <li>
+                    <div class="uk-slide-video js-video-container">
+                        <img src="/sites/all/themes/powerlab/images/slide001.jpg" alt=""/>
+                        <video autoplay muted loop id="video-3" class="video" src="/sites/default/files/drift.mp4"></video>
+
+                        <a href="#" class="js-play uk-slide-layout-play" data-video-id="video-3"></a>
+                        <a href="#" class="js-pause uk-slide-layout-pause" data-video-id="video-3"></a>
+                        <a href="#" class="js-mute uk-muted uk-slide-mute icon-volume-off" data-video-id="video-3"></a>
                     </div>
                 </li>
-                <li class="uk-active">
+
+                <li>
                     <img src="/sites/all/themes/powerlab/images/slide003.jpg" alt=""/>
                     <div class="uk-slide-caption uk-position-absolute">
                         <div class="uk-container uk-container-center uk-text-center">
@@ -151,7 +163,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="uk-active">
+                <li>
                     <img src="/sites/all/themes/powerlab/images/slide002.jpg" alt=""/>
                     <div class="uk-slide-caption uk-position-absolute">
                         <div class="uk-container uk-container-center uk-text-center">
@@ -184,7 +196,7 @@
             <div class="uk-exemples_block-slider-tachometer uk-position-absolute">
                 <img src="/sites/all/themes/powerlab/images/tachometer.png" alt=""/>
                 <div class="uk-exemples_block-slider-tachometer-marker uk-position-absolute">
-                    
+
                 </div>
                 <div class="uk-exemples_block-slider-tachometer-counter uk-position-absolute uk-text-center
                 uk-text-contrast">
@@ -201,7 +213,7 @@
 
             <div class="uk-position-top-left uk-position-bottom-right">
                 <div class="uk-container uk-container-center">
-                    <div class="uk-flex uk-flex-right">
+                    <div class="uk-flex uk-flex-right uk-margin-medium-top">
                         <div class="uk-exemples_block-slider-content uk-width-1-2">
                             <div class="uk-exemples_block-slider-content-ttl uk-h1 uk-text-contrast uk-text-uppercase uk-text-extrabold">Примеры наших работ</div>
                             <div class="uk-margin-top">
@@ -212,8 +224,8 @@
                                 <p>В основном понятие применяется для обозначения коррекции программы блока управления двигателем автомобиля с целью увеличения мощности. Кроме указанного к чип-тюнингу иногда относят и применение дополнительных электронных модулей для решения схожих задач.</p>
                             </div>
                             <div class="uk-flex uk-flex-space-between uk-margin-large-top">
-                                <a href="#" class="uk-exemples_block-slider-content-prev uk-button uk-button-medium uk-button-contrast uk-position-z-index">Чип-тюнинг</a>
-                                <a href="#" class="uk-exemples_block-slider-content-next uk-button uk-button-medium uk-button-contrast uk-position-z-index">ADBlue</a>
+                                <a href="#" class="uk-exemples_block-slider-content-prev uk-button uk-button-medium uk-button-contrast uk-button-rounded uk-position-z-index">Чип-тюнинг</a>
+                                <a href="#" class="uk-exemples_block-slider-content-next uk-button uk-button-medium uk-button-contrast uk-button-rounded uk-position-z-index">ADBlue</a>
                             </div>
                         </div>
                     </div>
@@ -226,7 +238,7 @@
         </div>
     </div>
     <div class="uk-about_block uk-text-contrast uk-position-relative">
-        <div class="uk-container uk-container-center">
+        <div class="uk-container uk-container-center uk-position-relative uk-position-z-index">
             <div class="uk-grid uk-grid-collapse">
                 <div class="uk-width-1-3">
                     <div class="uk-about_block-one">
@@ -235,7 +247,7 @@
                             О компании
                         </div>
 
-                        <div class="uk-h2 uk-about_block-desc uk-text-translucent uk-text-light">
+                        <div class="uk-about_block-desc uk-text-light">
                             Мы – лаборатория профессионального чип-тюнинга "PowerLab" – специализируемся на удаленном изменении.
                         </div>
 
@@ -249,7 +261,7 @@
                             <div class="uk-h3 uk-text-uppercase uk-text-bold uk-margin-bottom">
                                 ШИРОКИЙ СПЕКТР УСЛУГ
                             </div>
-                            <div class="uk-h4 uk-text-translucent">
+                            <div class="uk-h5 uk-text-translucent">
                                 Сотрудничая с нами вы сможете предложить своим клиентам чип-тюнинг дизельных авто, а также решение проблем с FAP, DPF, EGR, Lambda, Flaps. Также мы можем выборочно удалять ошибки практически со всех блоков.
                             </div>
                         </div>
@@ -258,7 +270,7 @@
                             <div class="uk-h3 uk-text-uppercase uk-text-bold uk-margin-bottom">
                                 100% ГАРАНТИЯ БЕЗОПАСНОСТИ НАШИХ ПРОШИВОК
                             </div>
-                            <div class="uk-h4 uk-text-translucent">
+                            <div class="uk-h5 uk-text-translucent">
                                 Наши специалисты индивидуально разрабатывают каждую прошивку с учетом спецификации узлов и агрегатов конкретного автомобиля. В рассчет берутся характеристики турбины, производительности форсунок, трансмиссии, топливоподача пересчитывается с точки зрения углов опережения впрыска, состава смеси.
                             </div>
                         </div>
@@ -274,7 +286,7 @@
                             <div class="uk-h3 uk-text-uppercase uk-text-bold uk-margin-bottom">
                                 ОПЛАТА ТОЛЬКО ЗА БЛАГОДАРНЫХ КЛИЕНТОВ
                             </div>
-                            <div class="uk-h4 uk-text-translucent">
+                            <div class="uk-h5 uk-text-translucent">
                                 Вы платите нам только после того, как ваш клиент сказал вам "Спасибо" за чип-тюнинг его автомобиля
                             </div>
                         </div>
@@ -283,7 +295,7 @@
                             <div class="uk-h3 uk-text-uppercase uk-text-bold uk-margin-bottom">
                                 БОЛЕЕ 50 СЕРВИСОВ УЖЕ ВЫБРАЛИ НАС!
                             </div>
-                            <div class="uk-h4 uk-text-translucent">
+                            <div class="uk-h5 uk-text-translucent">
                                 Автосервисы в России, странах СНГ и Европе уже успешно ставят наши прошивки и зарабатывают вместе с нами. Кроме того всех клиентов, которые приходят к нам, мы отправляем на автосервисы-партнеры
                             </div>
                         </div>
@@ -294,27 +306,36 @@
             </div>
         </div>
 
-        <div class="uk-about_block-clouds-bottom uk-position-bottom-left uk-position-z-index">
-            <img src="/sites/all/themes/powerlab/images/about-clouds-bottom.png" alt=""/>
+        <div class="uk-about_block-road-left uk-position-bottom-left">
+            <img src="/sites/all/themes/powerlab/images/about-road-left.png" alt=""/>
         </div>
 
-        <div class="uk-about_block-car-left uk-position-absolute">
+        <div class="uk-about_block-clouds-bottom uk-position-bottom-left">
+            <img src="/sites/all/themes/powerlab/images/about-clouds-left.png" alt=""/>
+        </div>
+
+        <div class="uk-about_block-car-left uk-position-absolute" data-uk-scrollspy="{cls:'uk-animation-slide-bottom'}">
             <img src="/sites/all/themes/powerlab/images/about-car-left.png" alt=""/>
         </div>
 
-        <div class="uk-exemples_block-clouds-right uk-position-absolute uk-position-z-index">
+        <div class="uk-about_block-road-right uk-position-top-right">
+            <img src="/sites/all/themes/powerlab/images/about-road-right.png" alt=""/>
+        </div>
+
+        <div class="uk-exemples_block-clouds-right uk-position-absolute">
             <img src="/sites/all/themes/powerlab/images/about-clouds-right.png" alt=""/>
         </div>
 
-        <div class="uk-about_block-car-right uk-position-absolute">
+        <div class="uk-about_block-car-right uk-position-absolute" data-uk-scrollspy="{cls:'uk-animation-slide-top'}">
             <img src="/sites/all/themes/powerlab/images/about-car-right.png" alt=""/>
         </div>
 
     </div>
 
+    <?php } ?>
     <footer class="uk-footer uk-position-relative">
         
-        <div class="uk-footer-bg_top uk-position-absolute uk-position-z-index"><img src="/sites/all/themes/powerlab/images/footer-map-bg-top.png" alt=""/></div>
+        <div class="uk-footer-bg_top uk-position-absolute"><img src="/sites/all/themes/powerlab/images/footer-map-bg-top.png" alt=""/></div>
 
         <div class="uk-footer-bg uk-position-top-left uk-position-bottom-right"><img src="/sites/all/themes/powerlab/images/footer-map-bg.jpg" alt=""/></div>
 
@@ -324,7 +345,7 @@
                 Контакты
             </div>
 
-            <div class="uk-grid uk-grid-collapse">
+            <div class="uk-footer-contacts-shadow uk-grid uk-grid-collapse">
                 <div class="uk-width-1-1 uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-2 uk-width-xlarge-1-2">
 
                     <div class="uk-yandexmap">
@@ -351,7 +372,7 @@
                                         });
 
                                 var placemark = new ymaps.Placemark([53.902257, 27.561831], {
-                                    name: 'Считаем'
+                                    name: ''
                                 }, {
                                     balloonContentLayout: BalloonContentLayout,
                                     // Запретим замену обычного балуна на балун-панель.
